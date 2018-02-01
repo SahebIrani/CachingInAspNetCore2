@@ -1,0 +1,19 @@
+﻿@{
+      ViewData[ "Title" ] = "RedisCache";
+}
+
+<h2>RedisCache</h2>
+
+<h2>Distributed Cache with Redis</h2>
+<h3>
+      <b>Key Value TestString:</b>
+      @ViewBag.TesteString
+</h3>
+<h3>
+      <b>Key Value TestComplexObject:</b>
+      {
+      Text: @ViewBag.ObjectComplex.Text,
+      IntegerValue: @ViewBag.ObjectComplex.IntegerValue,
+      NumericoValue: @ViewBag.ObjectComplex.NumericoValue
+      }
+</h3>

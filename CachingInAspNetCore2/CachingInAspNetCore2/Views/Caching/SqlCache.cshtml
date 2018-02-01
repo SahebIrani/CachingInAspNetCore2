@@ -1,0 +1,20 @@
+﻿@{
+      ViewData[ "Title" ] = "SqlCache";
+}
+
+<h2>SqlCache</h2>
+
+<h2>Distributed Cache with SQL Server</h2>
+
+<h3>
+      <b>Key Value TestString:</b>
+      @ViewBag.TesteString
+</h3>
+<h3>
+      <b>Key Value TestComplexObject:</b>
+      {
+      Text: @ViewBag.ObjectComplex.Text,
+      IntegerValue: @ViewBag.ObjectComplex.IntegerValue,
+      NumericoValue: @ViewBag.ObjectComplex.NumericoValue
+      }
+</h3>

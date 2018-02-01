@@ -1,0 +1,66 @@
+﻿@{
+      ViewData[ "Title" ] = "IMemoryCache";
+}
+
+<h2>IMemoryCache</h2>
+<hr />
+
+@*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
+@* Section1 *@
+
+@*@model DateTime?
+      <div class="row">
+            <div class="col-md-3">
+                  <h3> Current Time: @DateTime.Now.ToString( )</h3>
+            </div>
+            <div class="col-md-3">
+                  <h3>Cached Time: @Model.Value.ToString( )</h3>
+            </div>
+      </div>*@
+
+@*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
+@* Section2 *@
+
+@*@model CachingInAspNetCore2.Models.CacheViewModel
+      <div class="row">
+            <div class="col-md-3">
+                  <h3> Current Time: @DateTime.Now.ToString( )</h3>
+            </div>
+            <div class="col-md-3">
+                  <h3> First Time: @(Model.FirstTime.HasValue ? Model.FirstTime.ToString( ) : "Cache is not available")</h3>
+            </div>
+            <div class="col-md-3">
+                  <h3>Second Time: @Model.SecondTime.ToString( )</h3>
+            </div>
+      </div>*@
+
+@*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
+@* Section3 *@
+<h3>
+      <b>Date / Time of Last View Update:</b>
+      @DateTime.Now.ToString( "dd/MM/yyyy HH:mm:ss" )
+</h3>
+<h3>
+      <b>Content of the cached object:</b>
+      @ViewBag.TesteCache.ToString( "dd/MM/yyyy HH:mm:ss" )
+</h3>
+
+@*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
+@* Section4 *@
+
+<hr />
+
+@model DateTime?
+<form asp-area="SinjulMSBH" asp-controller="Caching" asp-action="RemoveCache" method="post">
+      <div class="row">
+            <div class="col-md-3">
+                  <h3> Current Time: @DateTime.Now.ToString( )</h3>
+            </div>
+            <div class="col-md-3">
+                  <h3> Cache Time: @(Model!=null ? @Model.ToString( ) : "Cache is not available")</h3>
+            </div>
+            <div class="col-md-3">
+                  <input type="submit" class="btn btn-danger" value="Remove" />
+            </div>
+      </div>
+</form>
