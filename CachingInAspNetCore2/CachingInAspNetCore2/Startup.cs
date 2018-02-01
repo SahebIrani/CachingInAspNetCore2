@@ -22,24 +22,24 @@ namespace CachingInAspNetCore2
 		public void ConfigureServices ( IServiceCollection services )
 		{
 			//IMemoryCache
-			//services.AddMemoryCache( );
-			////◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
-			////RedisCache
-			//services.AddDistributedRedisCache( options =>
-			//{
-			//	options.Configuration =
-			//	    Configuration.GetSection( "ConnectRedis" ).Value;
-			//	options.InstanceName = "TesteRedisCache";
-			//} );
-			////◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
-			////RSqlCache
-			//services.AddDistributedSqlServerCache( options =>
-			//{
-			//	options.ConnectionString = Configuration
-			//	    .GetConnectionString( "CacheSQLServer" );
-			//	options.SchemaName = "dbo";
-			//	options.TableName = "CacheData";
-			//} );
+			services.AddMemoryCache( );
+			//◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+			//RedisCache
+			services.AddDistributedRedisCache( options =>
+			{
+				options.Configuration =
+				    Configuration.GetSection( "ConnectRedis" ).Value;
+				options.InstanceName = "TesteRedisCache";
+			} );
+			//◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+			//RSqlCache
+			services.AddDistributedSqlServerCache( options =>
+			{
+				options.ConnectionString = Configuration
+				    .GetConnectionString( "CacheSQLServer" );
+				options.SchemaName = "dbo";
+				options.TableName = "CacheData";
+			} );
 			//◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
 			services.AddMvc( );
 			//◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
